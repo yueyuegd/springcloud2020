@@ -1,10 +1,10 @@
-package net.zhangyue.service.impl;
+package net.zhangyue.payment.service.impl;
 
-import net.zhangyue.dao.PaymentDao;
 import net.zhangyue.entities.Payment;
-import net.zhangyue.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import net.zhangyue.payment.service.*;
+import net.zhangyue.payment.dao.*;
 
 @Service
 public class PaymentServiceImpl implements PaymentService {

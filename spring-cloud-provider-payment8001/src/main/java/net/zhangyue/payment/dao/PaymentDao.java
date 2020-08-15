@@ -1,9 +1,11 @@
-package net.zhangyue.service;
+package net.zhangyue.payment.dao;
 
 import net.zhangyue.entities.Payment;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
-public interface PaymentService {
+@Mapper
+public interface PaymentDao {
 
     public int create(Payment payment);
 
