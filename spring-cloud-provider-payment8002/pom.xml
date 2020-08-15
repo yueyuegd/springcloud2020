@@ -9,7 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-cloud-provider-payment8001</artifactId>
+    <artifactId>spring-cloud-provider-payment8002</artifactId>
+
 
     <dependencies>
 
@@ -77,5 +78,4 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
 </project>
