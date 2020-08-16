@@ -1,0 +1,20 @@
+server:
+  port: 8004
+
+#服务别名，注册zookeeper到注册中心名称
+spring:
+  application:
+    name: cloud-payment-service
+  cloud:
+    zookeeper:
+      connect-string: 172.20.10.7:2181
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://localhost:3306/db2019?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 990921
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: net.zhangyue.entities
