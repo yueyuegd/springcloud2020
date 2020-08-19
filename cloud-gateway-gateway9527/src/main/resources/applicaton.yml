@@ -1,6 +1,13 @@
 server:
   port: 9527
 
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+
 spring:
   application:
     name: cloud-gateway
@@ -25,13 +32,6 @@ spring:
             #- Cookie=username,zzyy
             #- Header=X-Request-Id, \d+  # 请求头要有X-Request-Id属性并且值为整数的正则表达式
 
-eureka:
-  instance:
-    hostname: cloud-gateway-service
-  client: #服务提供者provider注册进eureka服务列表内
-    service-url:
-      register-with-eureka: true
-      fetch-registry: true
-      defaultZone: http://localhost:7001/eureka
+
 
 
