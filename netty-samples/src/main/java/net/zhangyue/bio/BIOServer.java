@@ -1,4 +1,4 @@
-package net.zhangyue;
+package net.zhangyue.bio;
 
 
 import java.io.IOException;
