@@ -1,10 +1,7 @@
 package net.zhangyue.netty;
 
 import io.netty.bootstrap.ServerBootstrap;
-import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelInitializer;
-import io.netty.channel.ChannelOption;
-import io.netty.channel.EventLoopGroup;
+import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
@@ -42,6 +39,17 @@ public class NettyServer {
             //绑定一个端口并且同步，生成了一个ChannelFuture
             //启动服务器
             ChannelFuture channelFuture = serverBootstrap.bind(6668).sync();
+            //给channelFuture注册监听器，监控我们关心的事件
+            channelFuture.addListener(new ChannelFutureListener() {
+                @Override
+                public void operationComplete(ChannelFuture channelFuture) throws Exception {
+                    if (channelFuture.isSuccess()) {
+                        System.out.println("服务器监听端口号6668成功");
+                    } else {
+                        System.out.println("服务器监听端口号6668失败");
+                    }
+                }
+            });
             //对关闭通道进行监听
             channelFuture.channel().closeFuture().sync();
         } finally {
