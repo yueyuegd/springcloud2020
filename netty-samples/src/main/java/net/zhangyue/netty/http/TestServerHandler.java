@@ -30,6 +30,7 @@ public class TestServerHandler extends SimpleChannelInboundHandler<HttpObject> {
             defaultFullHttpResponse.headers().set(HttpHeaderNames.CONTENT_LENGTH, context.readableBytes());
             //将构建好的response返回
             channelHandlerContext.writeAndFlush(defaultFullHttpResponse);
+            System.out.println("hello");
 
 
         }
